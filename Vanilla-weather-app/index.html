@@ -11,6 +11,7 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Steffis weather app</title>
   </head>
@@ -19,10 +20,10 @@
       <div class="wrapper">
         <div class="weather-app-border">
           <div class="overview">
-      <h1>Wiesbaden</h1>
+      <h1 id="city"></h1>
       <ul>
         <li>Monday 21:00</li>
-        <li>Cloudy</li>
+        <li id="description"></li>
       </ul>
           </div>
       <div class="row">
@@ -30,20 +31,17 @@
           <div class="clearfix weather-temp">
           <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="Cloudy weather icon" class="float-left" />
           <div class="float-left">
-          <strong>12</strong><span class="units">°C | <a href="#">°F</a></span>
+          <strong id="temp"></strong><span class="units">°C | <a href="#">°F</a></span>
           </div>
           </div>
         </div>
         <div class="col-6">
           <ul>
             <li>
-              Precipitation: 37%
+              Humidity: <span id="humidity"></span> %
             </li>
             <li>
-              Humidity: 82%
-            </li>
-            <li>
-              Wind: 5 km/h
+              Wind: <span id="wind"> </span> km/h
             </li>
           </ul>
         </div>  
