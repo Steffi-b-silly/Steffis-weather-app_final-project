@@ -3,11 +3,12 @@ body {
 }
 
 h1 {
-  color: #878787;
+  color: #512da8;
   font-size: 25px;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 30px;
   margin-bottom: 0;
+  font-family: fantasy, arial, sans-serif;
 }
 
 ul {
@@ -31,11 +32,18 @@ li:first-letter {
 .wrapper {
   max-width: 600px;
   margin: 33px auto;
+  /* gradient */
+  background: rgb(7, 255, 47);
+  background: linear-gradient(
+    0deg,
+    rgba(7, 255, 47, 0.2978233529740021) 0%,
+    rgba(253, 250, 45, 0.348243521041229) 100%
+  );
 }
 
 .weather-app-border {
   padding: 22px;
-  border: 1px solid #dadde1;
+  border: 1px solid #212122;
   border-radius: 5px;
 }
 
