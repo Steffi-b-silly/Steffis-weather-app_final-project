@@ -99,3 +99,8 @@ li:first-letter {
   line-height: 15px;
   white-space: nowrap;
 }
+
+.steffi {
+  font-style: italic;
+  font-size: 10px;
+}
