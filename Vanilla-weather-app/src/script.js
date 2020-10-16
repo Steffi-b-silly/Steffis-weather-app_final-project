@@ -21,7 +21,10 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#weather-icon");
-    temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+    celsiusTemperature = response.data.main.temp
+
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather[0].description;
     humidityElement.innerHTML = response.data.main.humidity;
@@ -43,9 +46,30 @@ function searchedCity(event) {
     search(cityInputElement.value);
 }
 
-search("Singapore")
+function displayFahrenheitTemperature(event) {
+    event.preventDefault();
+    let TemperatureElement = document.querySelector("#temp");
+    let fahrenheitTemperature = (celsiusTemperature * 1.8) + 32;
+    TemperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+    event.preventDefault();
+    let TemperatureElement = document.querySelector("#temp");
+    TemperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+
+let celsiusTemperature = null;
 
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchedCity);
 
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Singapore")
